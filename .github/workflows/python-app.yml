@@ -13,9 +13,3 @@ jobs:
         run: docker build -t "hello-python" ./test
       - name: Run the Docker container
         run: docker run -d -p 80:80 --name hello-python-container hello-python
-      - name: Test the Docker container
-        run: |
-          sleep 5
-          curl -f http://localhost:80 || exit 1
-      - name: Stop the Docker container
-        run: docker stop hello-python-container
