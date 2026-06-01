@@ -11,3 +11,5 @@ jobs:
       - uses: actions/checkout@v4
       - name: Build the Docker image
         run: docker build -t "hello-python" ./test
+      - name: Run the Docker container
+        run: docker run -d -p 80:80 --name hello-python-container hello-python
