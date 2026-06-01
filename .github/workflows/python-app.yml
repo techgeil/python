@@ -10,5 +10,4 @@ jobs:
       steps:
       - uses: actions/checkout@v4
       - name: Build the Docker image
-        run: docker build -t "hello-python" ./C:/Users/Bruger/OneDrive - AARHUS TECH/IT-ting/H3/Serverautomatisering II/python/.github
-        
+        run: docker build -t "hello-python" ./test
