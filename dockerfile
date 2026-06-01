@@ -1,0 +1,11 @@
+# Husk at stå vidtoueltsining til  
+# hvilken version eller hvilket python image skal vi bruge?
+FROM python:3.14-slim
+# hvor skal vi arbejde i containeren? 
+
+WORKDIR /app
+# kopier requirements.txt ind i containeren
+COPY . .
+
+# køre sctipten når containeren starter
+CMD ["python", "Docker.py"]
