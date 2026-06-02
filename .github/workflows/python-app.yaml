@@ -6,21 +6,25 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write 
+      
     steps:
-      - uses: actions/checkout@v4
+        - uses: actions/checkout@v4  
       
-      - name: Log in to github container registry
-        uses: docker/login-action@v2
-        run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u ${{ github.actor }} --password-stdin
+        - name: Log in to github container registry
+          uses: docker/login-action@v2
+          run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u ${{ github.actor }} --password-stdin
       
-      - name: Build docker image
-        run: docker build -t ghcr.io/${{ github.repository_owner }}/hello-python:latest ./test
+        - name: Build docker image
+          run: docker build -t ghcr.io/${{ github.repository_owner }}/hello-python:latest ./test
 
-      - name: run docker image
-        run: docker run ghcr.io/${{ github.repository_owner }}/hello-python:latest
+        - name: run docker image
+          run: docker run ghcr.io/${{ github.repository_owner }}/hello-python:latest
       
-      - name: push docker image
-        run: docker push ghcr.io/${{ github.repository_owner }}/hello-python:latest
+        - name: push docker image
+          run: docker push ghcr.io/${{ github.repository_owner }}/hello-python:latest
 
 
 
