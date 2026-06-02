@@ -9,7 +9,7 @@ jobs:
     permissions:
       contents: read
       packages: write 
-      
+
       
     steps:
         - uses: actions/checkout@v4  
@@ -25,7 +25,5 @@ jobs:
       
         - name: push docker image
           run: docker push ghcr.io/${{ github.repository_owner }}/hello-python:latest
-
-
 
         
