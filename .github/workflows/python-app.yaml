@@ -1,4 +1,5 @@
 name: bygger docker image
+
 on:
   push:
     branches: [ main ]
@@ -20,12 +21,12 @@ jobs:
           run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u ${{ github.actor }} --password-stdin
       
         - name: Build docker image
-          run: docker build -t ghcr.io/${{ github.repository_owner }}/hello-python:latest ./test
+          run: docker build -t ghcr.io/${{ github.repository_owner }}/hello-py:latest ./test
 
         - name: run docker image
-          run: docker run ghcr.io/${{ github.repository_owner }}/hello-python:latest
+          run: docker run ghcr.io/${{ github.repository_owner }}/hello-py:latest
       
         - name: push docker image
-          run: docker push ghcr.io/${{ github.repository_owner }}/hello-python:latest
+          run: docker push ghcr.io/${{ github.repository_owner }}/hello-py:latest
 
         
