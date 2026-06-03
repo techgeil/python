@@ -8,7 +8,7 @@ spec:
   source:
     repoURI: https://github.com/techgeil/python.git
     targetRevision: main
-    path: kubernetes
+    path: kubernete
   destination:
     server: https://kubernetes.default.svc
     namespace: default
