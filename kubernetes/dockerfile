@@ -8,4 +8,4 @@ WORKDIR /app
 COPY . .
 
 # køre sctipten når containeren starter
-CMD ["python", "Docker.py"]
+CMD ["python", "iamalive.py"]
