@@ -6,7 +6,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURI: https://github.com/techgeil/python.git
+    repoURL: https://github.com/techgeil/python.git
     targetRevision: main
     path: kubernete
   destination:
