@@ -22,6 +22,9 @@ jobs:
       
         - name: Build docker image
           run: docker build -t ghcr.io/${{ github.repository_owner }}/hello-py:latest ./kubernete
+        
+        - name: build docker image tetris
+          run: docker build -t ghcr.io/${{ github.repository_owner }}/hello-tetris:latest ./tetris
 
         - name: run docker image (detached mode)
           run: docker run -d ghcr.io/${{ github.repository_owner }}/hello-py:latest
@@ -29,4 +32,6 @@ jobs:
         - name: push docker image
           run: docker push ghcr.io/${{ github.repository_owner }}/hello-py:latest
 
+        - name: push docker image tetris
+          run: docker push ghcr.io/${{ github.repository_owner }}/hello-tetris:latest
         
